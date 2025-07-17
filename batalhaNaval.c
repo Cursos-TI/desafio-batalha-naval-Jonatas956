@@ -10,31 +10,29 @@ int main() {
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+    int tabuleiro[5][5] = {0}; // Tabuleiro 5x5 inicializado com 0
 
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
+    // Posição do navio vertical (coluna fixa, linhas variando)
+    int col_v = 1; // coluna 1
+    int linha_inicio_v = 0; // começa na linha 0
 
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
+    printf("Navio Vertical (3 partes):\n");
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linha_inicio_v + i][col_v] = 1;
+        printf("Parte %d: (%d, %d)\n", i + 1, linha_inicio_v + i, col_v);
+    }
 
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
+    // Posição do navio horizontal (linha fixa, colunas variando)
+    int linha_h = 4; // linha 4
+    int col_inicio_h = 2; // começa na coluna 2
+
+    printf("\nNavio Horizontal (3 partes):\n");
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linha_h][col_inicio_h - i] = 2;
+        printf("Parte %d: (%d, %d)\n", i + 1, linha_h, col_inicio_h - i);
+    }
 
     return 0;
 }
+
+
